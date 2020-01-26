@@ -1,0 +1,43 @@
+<h2>{{title}}</h2>
+<div [class.myClass]="applyClass">Apply Class</div>
+<div [style.color]="applyBlue?'blue':'orange'">This is style binding</div>
+<h4>Header 4 from tutorial component</h4>
+<button (click)="onClick($event)">Click Me</button>
+<input type="text" #demoInput><br><br>
+<input type="text" [(ngModel)]="fname">
+<input type="text" [(ngModel)]="lname">
+Full Name: {{fname}} {{lname}}
+<br><br>
+<img [src]="imgLink">
+
+<p *ngIf="showElement">Show Element</p>
+<div [ngSwitch]="color">
+    <p *ngSwitchCase="'red'">Red color is shown</p>
+    <p *ngSwitchCase="'blue'">blue color is shown</p>
+    <p *ngSwitchDefault>Invalid color</p>
+</div>
+
+<ul>
+    <li *ngFor="let color of colors">{{color}}</li>
+</ul>
+
+<p [ngClass]="{classOne:cone, classTwo:ctwo}">ngClass paragraph</p>
+<button (click)="toggle()">Toggle</button>
+<p [ngStyle]="{'font-style':style,'font-size':size}">ngStyle paragraph</p>
+<h2>{{name | lowercase}}</h2>
+<h2>{{name | uppercase}}</h2>
+<h2>{{name | slice:'2':'5'}}</h2>
+
+<h2>{{8.567 | number:'1.2-3'}}</h2>
+<h2>{{8.567 | number:'2.2-3'}}</h2>
+<h2>{{8.567 | number:'2.4-4'}}</h2>
+<h2>{{8.567 | number:'2.2-2'}}</h2>
+
+<h2>{{8.99 | currency:'EUR'}}</h2>
+<h2>{{8.99 | currency:'USD'}}</h2>
+<h2>{{8.99 | currency:'GBP'}}</h2>
+
+<h2>{{date}}</h2>
+<h2>{{date | date:'fullDate'}}</h2>
+<h2>{{date | date:'shortDate'}}</h2>
+<h2>{{date | date:'mediumTime'}}</h2>

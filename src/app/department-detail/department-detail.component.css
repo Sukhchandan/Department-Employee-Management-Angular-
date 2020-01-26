@@ -1,0 +1,10 @@
+a {
+    display: inline-flex;
+    height : 35px;
+    align-items: center;
+    justify-content: center;
+    background: lightblue;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}

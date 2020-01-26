@@ -1,0 +1,111 @@
+
+<h1>Angular Animations</h1>
+<button (click)="toggleLights()">Toggle Lights</button>
+<div (@lightsOnOff.done)="animationDone($event)" (@lightsOnOff.start)="animationStarted($event)" [@lightsOnOff]="room.state" class="room">Rotate</div>
+<button (click)="toggleHeight()">Toggle Height</button>
+<div [@lightsOnOff]="room.state" [@heightTrigger]="heightState" class="heightBox">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</div>
+<div [@groupTrigger]="room.state" class="room"></div>
+<button (click)="toggleDiv()">Toggle Div</button>
+<div *ngIf="showDiv" [@flyInOut]>
+    FLYINOUT
+</div>
+<!-- <h1>Routing Application</h1>
+<nav>
+    <a routerLink="/random" routerLinkActive="active">Departments</a>
+    <a routerLink="/employees" routerLinkActive="active">Employees</a>
+</nav> -->
+<!-- <app-employee-list></app-employee-list> -->
+<!--<app-tutorials></app-tutorials>
+<div class="container">
+    <h2>User Data</h2>
+    Template Driven form 
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" novalidate>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" #nameRef="ngModel" maxlength="10" minlength="4" required class="form-control" name="name" [(ngModel)]="myName">
+            <div *ngIf="nameRef.errors && (nameRef.dirty || nameRef.touched)" class="alert alert-danger">
+                <div [hidden]="!nameRef.errors.required">
+                    Please enter a name
+                </div>
+                <div [hidden]="!nameRef.errors.minlength">
+                        Please enter atleast 4 characters
+                </div>
+                <div [hidden]="!nameRef.errors.maxlength">
+                        Please enter atmost 10 characters
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" ngModel>
+        </div>
+        <div ngModelGroup="address">
+                <div class="form-group">
+                        <label>Street</label>
+                        <input type="text" class="form-control" name="street" ngModel>
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" class="form-control" name="city" ngModel>
+                    </div>
+                    <div class="form-group">
+                        <label>Postal Code</label>
+                        <input type="text" #refPinCode="ngModel" pattern="^[1-9][0-9]{4}$" class="form-control" name="postalcode" ngModel>
+                        <div *ngIf="refPinCode.errors && (refPinCode.dirty || refPinCode.touched)" class="alert alert-danger">
+                                <div [hidden]="!refPinCode.errors.pattern">
+                                    Please enter a 5 digit number
+                                </div>
+                        </div>
+                    </div>
+        </div>
+    
+        <button [disabled]="!userForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    Model Driven Form
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" formControlName="name">
+                <div *ngIf="userForm.controls['name'].hasError('required')" class="alert alert-danger">
+                    Please enter a name
+                </div>
+                <div *ngIf="userForm.controls['name'].hasError('minlength')" class="alert alert-danger">
+                     Please enter atleast four characters.
+                </div>
+                <div *ngIf="userForm.controls['name'].hasError('maxlength')" class="alert alert-danger">
+                     Name cannot exceed ten characters.
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" formControlName="email">
+            </div>
+            <div formGroupName="address">
+                    <div class="form-group">
+                        <label>Street</label>
+                        <input type="text" class="form-control" formControlName="street">
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" class="form-control" formControlName="city">
+                    </div>
+                    <div class="form-group">
+                        <label>Postal Code</label>
+                        <input type="text" class="form-control" formControlName="postalcode">
+                        <div *ngIf="userForm.controls['address'].controls['postalcode'].hasError('pattern')" class="alert alert-danger">
+                                Postal Code format is five digits.
+                        </div>
+                    </div>
+            </div>
+            <button [disabled]="!userForm.valid" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+</div>-->
+<router-outlet></router-outlet>
